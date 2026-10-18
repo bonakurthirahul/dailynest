@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   DailyNest — Brand Theme
+   Palette:
+     Forest Green  #245C43  (primary)
+     Fresh Green   #75A86A  (accent)
+     Warm Ivory    #FAF9F4  (background)
+     White         #FFFFFF
+     Charcoal      #252A26  (text)
+   Type:
+     Headings — Manrope
+     Body     — Inter
+   ========================================================================= */
+
+:root {
+  --background: #faf9f4;
+  --foreground: #252a26;
+
+  --forest: #245c43;
+  --forest-dark: #1a4532;
+  --forest-light: #2f7354;
+  --fresh: #75a86a;
+  --fresh-light: #a3c99b;
+  --ivory: #faf9f4;
+  --ivory-dark: #f1efe6;
+  --charcoal: #252a26;
+  --charcoal-soft: #4a524c;
+  --muted: #7c847e;
+  --border: #e6e3d8;
+  --danger: #b3453b;
+  --warning: #b7791f;
+  --success: #2f7354;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-forest: var(--forest);
+  --color-forest-dark: var(--forest-dark);
+  --color-forest-light: var(--forest-light);
+  --color-fresh: var(--fresh);
+  --color-fresh-light: var(--fresh-light);
+  --color-ivory: var(--ivory);
+  --color-ivory-dark: var(--ivory-dark);
+  --color-charcoal: var(--charcoal);
+  --color-charcoal-soft: var(--charcoal-soft);
+  --color-muted: var(--muted);
+  --color-line: var(--border);
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
+  --color-success: var(--success);
+
+  --font-heading: var(--font-manrope), "Manrope", ui-sans-serif, system-ui,
+    sans-serif;
+  --font-body: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-body);
+
+  --shadow-soft: 0 1px 2px rgba(37, 42, 38, 0.04),
+    0 8px 24px rgba(37, 42, 38, 0.06);
+  --shadow-lift: 0 2px 4px rgba(37, 42, 38, 0.06),
+    0 16px 40px rgba(37, 42, 38, 0.1);
+  --radius-card: 1.25rem;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--charcoal);
+}
+
+/* Focus ring for keyboard accessibility */
+:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Subtle reusable utilities */
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--forest);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 18px rgba(36, 92, 67, 0.22);
+}
+.btn-primary:hover {
+  background: var(--forest-dark);
+  transform: translateY(-1px);
+}
+.btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--forest);
+  font-weight: 600;
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.btn-ghost:hover {
+  border-color: var(--forest);
+  background: rgba(117, 168, 106, 0.08);
+}
+
+.field {
+  width: 100%;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 0.9rem;
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+  color: var(--charcoal);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.field:focus {
+  outline: none;
+  border-color: var(--forest);
+  box-shadow: 0 0 0 3px rgba(117, 168, 106, 0.25);
+}
+.field::placeholder {
+  color: #a9b0aa;
+}
+
+@keyframes dn-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: dn-fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes dn-pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+.animate-pulse-dot {
+  animation: dn-pulse-dot 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-fade-up,
+  .animate-pulse-dot {
+    animation: none !important;
+  }
+}
