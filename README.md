@@ -50,52 +50,11 @@ Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, and Supabase (auth,
 | Language | TypeScript (strict) |
 | Backend | Supabase (Auth, Postgres, Realtime, Storage) |
 | Fonts | Manrope (headings), Inter (body) via `next/font` |
-| Hosting | Vercel-ready (also Railway, Render, Fly.io, VPS) |
-
----
-
-## Quick start
-
-```bash
-# 1. Install
-npm install
-
-# 2. Set up Supabase (see docs/SETUP.md for the full walkthrough)
-#    - Create a project
-#    - Run supabase/migrations/00001_init.sql
-#    - Run supabase/migrations/00002_rls.sql
-#    - Run supabase/seed.sql
-#    - Create a public "product-images" Storage bucket
-
-# 3. Configure environment
-cp .env.example .env.local
-# Fill in your Supabase URL, keys, and owner bootstrap credentials
-
-# 4. Run
-npm run dev
-```
-
-Then visit:
+| Hosting | Vercel-ready (also Railway, Render, Fly.io, VPS) | 
 
 - Storefront: [http://localhost:3000](http://localhost:3000)
 - Owner setup (first run): [http://localhost:3000/store-control-7x9/setup](http://localhost:3000/store-control-7x9/setup)
 - Owner login: [http://localhost:3000/store-control-7x9/login](http://localhost:3000/store-control-7x9/login)
-
-Full setup instructions: **[docs/SETUP.md](docs/SETUP.md)**
-
----
-
-## Scripts
-
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Start the development server |
-| `npm run build` | Create an optimized production build |
-| `npm run start` | Serve the production build |
-| `npm run lint` | Run ESLint |
-| `npm run typecheck` | Run TypeScript checks |
-
----
 
 ## Project structure
 
